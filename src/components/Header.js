@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import AccessTimeIcon from '@material-ui/icons/AccessTime'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
-import { Help } from '@material-ui/icons'
 
 function Header() {
     return (
@@ -50,7 +49,7 @@ const Main = styled.div`
 const SearchContainer = styled.div`
     min-width: 400px;
     margin-left: 16px;
-    marging-right: 16px;
+    margin-right: 16px;
 `
 
 const Search = styled.div`
@@ -68,6 +67,7 @@ const Search = styled.div`
         color: white;
         padding-top: 4px;
         padding-bottom: 4px;
+        width: 100%;
     }
 
     input:focus {

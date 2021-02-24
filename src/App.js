@@ -6,6 +6,7 @@ import Login from './components/Login'
 import styled from 'styled-components'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
+import Darkmode from 'darkmode-js'
 
 function App() {
   return (
@@ -43,3 +44,20 @@ const Main = styled.div`
   display: grid;
   grid-template-columns: 260px auto;
 `
+
+const options = {
+  bottom: '16px',
+  right: '16px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: '#fff',
+  backgroundColor: '#fff',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
