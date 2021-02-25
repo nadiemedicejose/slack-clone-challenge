@@ -1,20 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import StarOutlineIcon from '@material-ui/icons/StarOutline';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import ChatInput from './ChatInput'
+import ChatMessage from './ChatMessage'
 
 function Chat() {
     return (
         <Container>
-            <MainContainer>
-                <FavoriteIcon />
-                <RoomName>People & Groups</RoomName>
-                <StarOutlineIcon />
-            </MainContainer>
-            <InfoContainer>
-                <InfoOutlinedIcon />
-            </InfoContainer>
+            <Header>
+                <Channel>
+                    <ChannelName>
+                        # Clever
+                    </ChannelName>
+                    <ChannelInfo>
+                        Company-wide announcements and work-based matters
+                    </ChannelInfo>
+                </Channel>
+                <ChannelDetails>
+                    <div>
+                        Details
+                    </div>
+                    <InfoIcon />
+                </ChannelDetails>
+            </Header>
+            <MessageContainer>
+                <ChatMessage />
+            </MessageContainer>
+            <ChatInput />
         </Container>
     )
 }
@@ -22,42 +34,40 @@ function Chat() {
 export default Chat
 
 const Container = styled.div`
-    background: white;
-    height: 64px;
+    display: grid;
+    grid-template-rows: 64px auto min-content;
+`
+
+const Header = styled.div`
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
-    padding-left: 19px;
+    border-bottom: 1px solid rgba(83, 39, 83, .13);
     justify-content: space-between;
-    border-bottom: 1px solid #532753;
 `
 
-const MainContainer = styled.div`
-    color: #343a40;
+const Channel = styled.div``
+
+const ChannelDetails = styled.div`
     display: flex;
     align-items: center;
-    padding-left: 19px;
-    cursor: pointer;
-    font-weight: bold;
+    color: #606060;
 `
 
-const RoomName = styled.div`
-    margin-left: 4px;
-    margin-right: 6px;
+const ChannelName = styled.div`
+    font-weight: 700;
 `
 
-const InfoContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 28px;
-    margin-left: 19px;
-    margin-right: 12px;
-    padding: 10px;
-    cursor: pointer;
-    color: #343a40;
-    fill: #343a40;
-    :hover {
-        background: #F6F6F6;
-        border-radius: 4px;
-    }
+const ChannelInfo = styled.div`
+    font-weight: 400;
+    color: #606060;
+    font-size: 13px;
+    margin-top: 8px;
 `
+
+const InfoIcon = styled(InfoOutlinedIcon)`
+    margin-left: 10px;
+`
+
+const MessageContainer = styled.div``
