@@ -31,26 +31,3 @@ export const sidebarItemsData = [
         text: "More"
     }
 ]
-
-export const sidebarChannelsData = [
-    {
-        icon: "# ",
-        text: "Welcome"
-    },
-    {
-        icon: "# ",
-        text: "General"
-    },
-    {
-        icon: "# ",
-        text: "JavaScript"
-    },
-    {
-        icon: "# ",
-        text: "ReactJS"
-    },
-    {
-        icon: "# ",
-        text: "Announcements"
-    },
-]
