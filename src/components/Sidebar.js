@@ -62,27 +62,29 @@ function Sidebar(props) {
 export default Sidebar
 
 const Container = styled.div`
-    background: #3f0e40;
+    background: #FFEEED;
 `
 
 const WorkspaceContainer = styled.div`
-    color: white;
+    color: #4A154B;
     height: 64px;
     display: flex;
     align-items: center;
     padding-left: 19px;
     justify-content: space-between;
-    border-bottom: 1px solid #532753;
+    border-bottom: 1px solid rgba(83, 39, 83, .13);
 `
 
-const Name = styled.div``
+const Name = styled.div`
+    font-weight: 700;
+`
 
 const NewMessage = styled.div`
     width: 36px;
     height: 36px;
     background: white;
-    color: #3f0e40;
-    fill: #3f0e40;
+    color: #4A154B;
+    fill: #4A154B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +98,7 @@ const MainChannels = styled.div`
 `
 
 const MainChannelItem = styled.div`
-    color: rgb(188 171 188);
+    color: #896184;
     display: grid;
     grid-template-columns: 15% auto;
     height: 28px;
@@ -104,12 +106,12 @@ const MainChannelItem = styled.div`
     padding-left: 19px;
     cursor: pointer;
     :hover {
-        background: #350d36;
+        background: #fff;
     }
 `
 
 const ChannelsContainer = styled.div`
-    color: rgb(188 171 188);
+    color: #896184;
     margin-top: 10px;
 `
 
@@ -132,6 +134,6 @@ const Channel = styled.div`
     padding-left: 19px;
     cursor: pointer;
     :hover {
-        background: #350d36;
+        background: #fff;
     }
 `

@@ -30,8 +30,8 @@ function Header() {
 export default Header
 
 const Container = styled.div`
-    background: #350d36;
-    color: white;
+    background: #FFC2C0;
+    color: #4A154B;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +64,7 @@ const Search = styled.div`
         border: none;
         padding-left: 8px;
         padding-right: 8px;
-        color: white;
+        color: #4A154B;
         padding-top: 4px;
         padding-bottom: 4px;
         width: 100%;

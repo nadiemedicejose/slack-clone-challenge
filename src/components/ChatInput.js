@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import SendIcon from '@material-ui/icons/Send';
+import FormatBoldIcon from '@material-ui/icons/FormatBold';
+import FormatItalicIcon from '@material-ui/icons/FormatItalic';
+import FormatUnderlinedIcon from '@material-ui/icons/FormatUnderlined';
+import StrikethroughSIcon from '@material-ui/icons/StrikethroughS';
 
 function ChatInput() {
     return (
@@ -12,6 +16,20 @@ function ChatInput() {
                         <Send />
                     </SendButton>
                 </form>
+                <TextFormat>
+                    <FormatButton>
+                        <BoldIcon />
+                    </FormatButton>
+                    <FormatButton>
+                        <ItalicIcon />
+                    </FormatButton>
+                    <FormatButton>
+                        <UnderlinedIcon />
+                    </FormatButton>
+                    <FormatButton>
+                        <StrikethroughIcon />
+                    </FormatButton>
+                </TextFormat>
             </InputContainer>
         </Container>
     )
@@ -69,4 +87,66 @@ const SendButton = styled.div`
 
 const Send = styled(SendIcon)`
     color: #D9D9D9;
+`
+
+const TextFormat = styled.div`
+    background: #f8f8f8;
+    border-top: 1px solid #e1e1e1;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    height: 32px;
+    display: flex;
+    justify-content: left;
+`
+
+const FormatButton = styled.div`
+    background: transparent;
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    cursor: pointer;
+
+    .MuiSvgIcon-root {
+        width: 16px;
+    }
+
+    :hover {
+        background: #efefef;
+    }
+`
+
+const BoldIcon = styled(FormatBoldIcon)`
+    color: #606060;
+
+    :hover {
+        color: #1d1c1d;
+    }
+`
+
+const ItalicIcon = styled(FormatItalicIcon)`
+    color: #606060;
+
+    :hover {
+        color: #1d1c1d;
+    }
+`
+
+const UnderlinedIcon = styled(FormatUnderlinedIcon)`
+    color: #606060;
+
+    :hover {
+        color: #1d1c1d;
+    }
+`
+
+const StrikethroughIcon = styled(StrikethroughSIcon)`
+    color: #606060;
+
+    :hover {
+        color: #1d1c1d;
+    }
 `
