@@ -53,7 +53,7 @@ const SearchContainer = styled.div`
 `
 
 const Search = styled.div`
-    box-shadow: inset 0 0 0 1px rgb(104 74 104);
+    box-shadow: inset 0 0 0 1px #4A154B;
     width: 100%;
     border-radius: 6px;
     display: flex;
