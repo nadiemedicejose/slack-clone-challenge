@@ -8,8 +8,18 @@ import Sidebar from './components/Sidebar'
 import db from './firebase';
 import { useEffect, useState } from 'react';
 import { auth, provider } from './firebase';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme } from "./themes/LightTheme";
+import { darkTheme } from "./themes/DarkTheme";
 
 function App() {
+  const stored = localStorage.getItem("isDarkMode");
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem("isDarkMode"));
+
+  function setDarkModeAction() {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem("isDarkMode", !isDarkMode);
+  }
 
   const [rooms, setRooms] = useState([])
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
@@ -35,27 +45,29 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        {
-          !user ?
-          <Login setUser={setUser} />
-          :
-          <Container>
-            <Header signOut={signOut} user={user} />
-            <Main>
-              <Sidebar rooms={rooms} />
-              <Switch>
-                <Route path="/room/:channelId">
-                  <Chat user={user} />
-                </Route>
-                <Route path="/">
-                  Select or Create Chanel
-                </Route>
-              </Switch>
-            </Main>
-          </Container>
-        }
-      </Router>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <Router>
+          {
+            !user ?
+            <Login setUser={setUser} />
+            :
+            <Container>
+              <Header signOut={signOut} user={user} changeTheme={setDarkModeAction} />
+              <Main>
+                <Sidebar rooms={rooms} />
+                <Switch>
+                  <Route path="/room/:channelId">
+                    <Chat user={user} />
+                  </Route>
+                  <Route path="/">
+                    Select or Create Chanel
+                  </Route>
+                </Switch>
+              </Main>
+            </Container>
+          }
+        </Router>
+      </ThemeProvider>
     </div>
   );
 }

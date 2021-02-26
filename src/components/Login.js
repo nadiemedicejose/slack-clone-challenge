@@ -39,7 +39,7 @@ export default Login
 const Container = styled.div`
     width: 100%;
     height: 100vh;
-    background: #f8f8f8;
+    background: ${(props) => props.theme.colors.containerBackground};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +47,7 @@ const Container = styled.div`
 
 const Content = styled.div`
     background: white;
+    color: ${(props) => props.theme.colors.defaultColor};
     padding: 100px;
     border-radius: 5px;
     display: flex;
@@ -62,8 +63,8 @@ const SlackImg = styled.img`
 
 const SignInButton = styled.button`
     margin-top: 50px;
-    background-color: #0a8d48;
-    color: white;
+    background-color: ${(props) => props.theme.colors.containerBackground};
+    color: ${(props) => props.theme.colors.defaultColor};
     border: none;
     height: 40px;
     border-radius: 4px;

@@ -7,7 +7,7 @@ import db from '../firebase'
 import { useParams } from 'react-router-dom'
 import firebase from 'firebase'
 
-function Chat({ user }) {
+function Chat({ user, props }) {
 
     let { channelId } = useParams();
     const [ channel, setChannel ] = useState();
@@ -91,6 +91,7 @@ const Container = styled.div`
     display: grid;
     grid-template-rows: 64px auto min-content;
     min-height: 0;
+    background: ${(props) => props.theme.colors.chatWindowBackground};
 `
 
 const Header = styled.div`
@@ -98,18 +99,18 @@ const Header = styled.div`
     padding-right: 20px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(83, 39, 83, .13);
+    border-bottom: 1px solid ${(props) => props.theme.colors.chatHeaderBorderBottom};
     justify-content: space-between;
 `
 
 const Channel = styled.div`
-    color: #1d1c1d;
+    color: ${(props) => props.theme.colors.channelTextColor};
 `
 
 const ChannelDetails = styled.div`
     display: flex;
     align-items: center;
-    color: #606060;
+    color: ${(props) => props.theme.colors.channelDetailsColor};
 `
 
 const ChannelName = styled.div`
@@ -118,7 +119,7 @@ const ChannelName = styled.div`
 
 const ChannelInfo = styled.div`
     font-weight: 400;
-    color: #606060;
+    color: ${(props) => props.theme.colors.channelInfoTextColor};
     font-size: 13px;
     margin-top: 8px;
 `

@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import AccessTimeIcon from '@material-ui/icons/AccessTime'
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 
-function Header({ user, signOut }) {
+function Header({ user, signOut, changeTheme }) {
     return (
         <Container>
+            <button onClick={() => changeTheme()}>Change Colors</button>
             <Main>
                 <AccessTimeIcon />
                 <SearchContainer>
@@ -30,14 +31,22 @@ function Header({ user, signOut }) {
 export default Header
 
 const Container = styled.div`
-    background: #FFC2C0;
-    color: #4A154B;
+    background: ${(props) => props.theme.colors.containerBackground};
+    color: ${(props) => props.theme.colors.defaultColor};
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 10;
     box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
+
+    button {
+        background: transparent;
+        border: none;
+        color: ${(props) => props.theme.colors.defaultColor};
+        outline: none;
+        cursor: pointer;
+    }
 `
 
 const Main = styled.div`
@@ -53,7 +62,7 @@ const SearchContainer = styled.div`
 `
 
 const Search = styled.div`
-    box-shadow: inset 0 0 0 1px #4A154B;
+    box-shadow: inset 0 0 0 1px ${(props) => props.theme.colors.defaultColor};
     width: 100%;
     border-radius: 6px;
     display: flex;
@@ -64,7 +73,7 @@ const Search = styled.div`
         border: none;
         padding-left: 8px;
         padding-right: 8px;
-        color: #4A154B;
+        color: ${(props) => props.theme.colors.defaultColor};
         padding-top: 4px;
         padding-bottom: 4px;
         width: 100%;
@@ -91,7 +100,7 @@ const Name = styled.div`
 const UserImage = styled.div`
     width: 28px;
     height: 28px;
-    border: 2px solid white;
+    border: 2px solid ${(props) => props.theme.colors.defaultColor};
     border-radius: 3px;
     cursor: pointer;
 

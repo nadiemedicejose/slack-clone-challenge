@@ -6,7 +6,7 @@ import FormatItalicIcon from '@material-ui/icons/FormatItalic';
 import FormatUnderlinedIcon from '@material-ui/icons/FormatUnderlined';
 import StrikethroughSIcon from '@material-ui/icons/StrikethroughS';
 
-function ChatInput({ sendMessage }) {
+function ChatInput({ sendMessage, props }) {
 
     const [input, setInput] = useState("");
 
@@ -60,7 +60,7 @@ const Container = styled.div`
 `
 
 const InputContainer = styled.div`
-    border: 1px solid #8D8D8E;
+    border: 1px solid ${(props) => props.theme.colors.inputBorder};
     border-radius: 4px;
 
     form {
@@ -73,6 +73,8 @@ const InputContainer = styled.div`
             flex: 1;
             border: none;
             font-size: 13px;
+            background: transparent;
+            color: ${(props) => props.theme.colors.inputTextColor};
         }
 
         input: focus {
@@ -82,7 +84,7 @@ const InputContainer = styled.div`
 `
 
 const SendButton = styled.button`
-    background: #007a5a;
+    background: ${(props) => props.theme.colors.sendButtonBackground};
     border-radius: 2px;
     width: 32px;
     height: 32px;
@@ -98,17 +100,17 @@ const SendButton = styled.button`
     }
 
     :hover {
-        background: #148567;
+        background: ${(props) => props.theme.colors.sendButtonBackgroundHover};
     }
 `
 
 const Send = styled(SendIcon)`
-    color: #D9D9D9;
+    color: ${(props) => props.theme.colors.sendIconColor};
 `
 
 const TextFormat = styled.div`
-    background: #f8f8f8;
-    border-top: 1px solid #e1e1e1;
+    background: ${(props) => props.theme.colors.textFormatBtnBackground};
+    border-top: 1px solid ${(props) => props.theme.colors.textFormatBtnBorder};
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 32px;
@@ -132,38 +134,38 @@ const FormatButton = styled.div`
     }
 
     :hover {
-        background: #efefef;
+        background: ${(props) => props.theme.colors.formatButttonBackgroundHover};
     }
 `
 
 const BoldIcon = styled(FormatBoldIcon)`
-    color: #606060;
+    color: ${(props) => props.theme.colors.iconColor};
 
     :hover {
-        color: #1d1c1d;
+        color: ${(props) => props.theme.colors.iconColorHover};
     }
 `
 
 const ItalicIcon = styled(FormatItalicIcon)`
-    color: #606060;
+    color: ${(props) => props.theme.colors.iconColor};
 
     :hover {
-        color: #1d1c1d;
+        color: ${(props) => props.theme.colors.iconColorHover};
     }
 `
 
 const UnderlinedIcon = styled(FormatUnderlinedIcon)`
-    color: #606060;
+    color: ${(props) => props.theme.colors.iconColor};
 
     :hover {
-        color: #1d1c1d;
+        color: ${(props) => props.theme.colors.iconColorHover};
     }
 `
 
 const StrikethroughIcon = styled(StrikethroughSIcon)`
-    color: #606060;
+    color: ${(props) => props.theme.colors.iconColor};
 
     :hover {
-        color: #1d1c1d;
+        color: ${(props) => props.theme.colors.iconColorHover};
     }
 `

@@ -37,13 +37,12 @@ function Sidebar(props) {
             </WorkspaceContainer>
             <MainChannels>
                 {
-                    sidebarItemsData.map(item => 
-                        (
-                            <MainChannelItem>
-                                {item.icon}
-                                {item.text}
-                            </MainChannelItem>
-                        ))
+                    sidebarItemsData.map(item => (
+                        <MainChannelItem>
+                            {item.icon}
+                            {item.text}
+                        </MainChannelItem>
+                    ))
                 }
                 
             </MainChannels>
@@ -71,17 +70,17 @@ function Sidebar(props) {
 export default Sidebar
 
 const Container = styled.div`
-    background: #FFEEED;
+    background: ${(props) => props.theme.colors.sidebarBackground};
 `
 
 const WorkspaceContainer = styled.div`
-    color: #4A154B;
+    color: ${(props) => props.theme.colors.defaultColor};
     height: 64px;
     display: flex;
     align-items: center;
     padding-left: 19px;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(83, 39, 83, .13);
+    border-bottom: 1px solid ${(props) => props.theme.colors.borderBottom};
 `
 
 const Name = styled.div`
@@ -91,9 +90,9 @@ const Name = styled.div`
 const NewMessage = styled.div`
     width: 36px;
     height: 36px;
-    background: white;
-    color: #4A154B;
-    fill: #4A154B;
+    background: ${(props) => props.theme.colors.newMessageBtnColor};
+    color: ${(props) => props.theme.colors.colorAndFill};
+    fill: ${(props) => props.theme.colors.colorAndFill};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +106,7 @@ const MainChannels = styled.div`
 `
 
 const MainChannelItem = styled.div`
-    color: #896184;
+    color: ${(props) => props.theme.colors.sidebarText};
     display: grid;
     grid-template-columns: 15% auto;
     height: 28px;
@@ -115,12 +114,12 @@ const MainChannelItem = styled.div`
     padding-left: 19px;
     cursor: pointer;
     :hover {
-        background: #fff;
+        background: ${(props) => props.theme.colors.sidebarHover};
     }
 `
 
 const ChannelsContainer = styled.div`
-    color: #896184;
+    color: ${(props) => props.theme.colors.sidebarText};
     margin-top: 10px;
 `
 
@@ -143,6 +142,6 @@ const Channel = styled.div`
     padding-left: 19px;
     cursor: pointer;
     :hover {
-        background: #fff;
+        background: ${(props) => props.theme.colors.sidebarHover};
     }
 `
